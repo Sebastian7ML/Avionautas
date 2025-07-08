@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <GalaxyBackground />
-      <MapView />
+      <MapView onSelect={setSelected} />
       <SearchBar value={search} onChange={setSearch} />
       <CharacterList search={search} onSelect={setSelected} />
       {selected && (
