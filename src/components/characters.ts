@@ -12,10 +12,19 @@ export type Character = {
 
 const rawCharacters = [
   {
-    name: 'Sebastián Mejía',
+    name: 'Ivan Sanchez',
+    username: 'IvanS',
+    licenses: 'B1 / TMA',
+    description: 'Aircraft mechanic with a passion for Cirrus aircraft.',
+    image: '/src/assets/ivan.jpg',
+    city: 'Sabadell',
+    coords: [41.5177, 2.101], // Sabadell Airport
+  },
+  {
+    name: 'Sebastian Mejia',
     username: 'Sebastian7ML',
     licenses: 'B2 / TMA',
-    description: 'Avionics technician with experience in Garmin suites',
+    description: 'Avionics technician with experience in Garmin suites.',
     image: '/src/assets/sebas.jpg',
     city: 'Sabadell',
     coords: [41.5167, 2.1000], // Sabadell Airport
@@ -101,6 +110,7 @@ const rawCharacters = [
     city: 'Atlantis',
     coords: [31.1313, -24.0376], // Atlantic Ocean
   },
+  
 ];
 
 export const characters: Character[] = rawCharacters.map((char, idx) => ({

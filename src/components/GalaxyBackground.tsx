@@ -16,7 +16,7 @@ const GalaxyBackground = () => {
       options={{
         fullScreen: { enable: true, zIndex: -1 },
         background: {
-          color: '#090a0f',
+          color: '#2cade9ff',
         },
         particles: {
           number: { value: 180, density: { enable: true, area: 1200 } },

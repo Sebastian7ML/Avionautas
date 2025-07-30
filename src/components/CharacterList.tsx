@@ -14,7 +14,8 @@ const CharacterList: React.FC<CharacterListProps> = ({ search = '', onSelect }) 
     char.username.toLowerCase().includes(search.toLowerCase()) ||
     char.name.toLowerCase().includes(search.toLowerCase()) ||
     char.licenses.toLowerCase().includes(search.toLowerCase()) ||
-    char.description.toLowerCase().includes(search.toLowerCase())
+    char.description.toLowerCase().includes(search.toLowerCase()) ||
+    (char.city && char.city.toLowerCase().includes(search.toLowerCase()))
   );
   return (
     <div className="character-list">
