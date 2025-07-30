@@ -21,6 +21,13 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, onClose 
           <div className="profile-realname">{character.name}</div>
           <div className="profile-divider" />
           <div className="profile-description-large">{character.description}</div>
+          {character.experience && character.experience.length > 0 && (
+            <ul className="profile-experience-list">
+              {character.experience.map((exp, i) => (
+                <li key={i}>{exp}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>

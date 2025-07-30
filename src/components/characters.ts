@@ -7,6 +7,7 @@ export type Character = {
   image: string; // relative path to asset
   city?: string;
   coords?: [number, number]; // [lat, lng]
+  experience?: string[];
 };
 
 
@@ -19,6 +20,12 @@ const rawCharacters = [
     image: '/src/assets/ivan.jpg',
     city: 'Sabadell',
     coords: [41.5177, 2.101], // Sabadell Airport
+    experience: [
+      '✈️ 6+ years in aircraft maintenance',
+      '🔧 Cirrus and Piper specialist',
+      '🌍 Worked with Private Aviation and Air Ambulance',
+      '⭐ Detail-oriented and reliable',
+    ],
   },
   {
     name: 'Sebastian Mejia',
@@ -28,6 +35,12 @@ const rawCharacters = [
     image: '/src/assets/sebas.jpg',
     city: 'Sabadell',
     coords: [41.5167, 2.1000], // Sabadell Airport
+    experience: [
+      '✈️ 8+ years in avionics maintenance.',
+      '🔧 Scheduled and corrective maintenance, as well as avionics modifications on airplanes and helicopters.',
+      '🌍 Worked with General Aviation, the National Police of Colombia, and the Colombian Air Force.',
+      '⭐ Excellent troubleshooting skills.',
+    ],
   },
   {
     name: 'Bruce Wayne',
