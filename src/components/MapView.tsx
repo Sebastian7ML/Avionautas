@@ -21,8 +21,8 @@ const MapView: React.FC<MapViewProps> = ({ onSelect }) => (
         <Marker position={char.coords as LatLngExpression} key={char.id}>
           <Popup>
             <div style={{textAlign:'center', cursor: onSelect ? 'pointer' : undefined}} onClick={() => onSelect && onSelect(char)}>
-              <img src={char.image} alt={char.alias} style={{width:48, height:48, borderRadius:'50%', marginBottom:6, objectFit:'cover', background:'#222'}} />
-              <div><strong>{char.alias}</strong></div>
+              <img src={char.image} alt={char.username} style={{width:48, height:48, borderRadius:'50%', marginBottom:6, objectFit:'cover', background:'#222'}} />
+              <div><strong>{char.username}</strong></div>
               <div style={{fontSize:'0.95em', opacity:0.8}}>{char.city}</div>
               {onSelect && <div style={{fontSize:'0.85em', color:'#1976d2', marginTop:4}}>Ver perfil</div>}
             </div>

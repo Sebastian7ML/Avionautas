@@ -13,9 +13,9 @@ const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, onClose 
       <div className="profile-modal" onClick={e => e.stopPropagation()}>
         <button className="profile-close" onClick={onClose} aria-label="Close profile">&times;</button>
         <div className="profile-header">
-          <img src={character.image} alt={character.alias} className="profile-image-large" />
-          <div className="profile-alias">{character.alias}</div>
-          <div className="profile-universe-badge">{character.universe}</div>
+          <img src={character.image} alt={character.username} className="profile-image-large" />
+          <div className="profile-username">{character.username}</div>
+          <div className="profile-licenses-badge">{character.licenses}</div>
         </div>
         <div className="profile-body">
           <div className="profile-realname">{character.name}</div>

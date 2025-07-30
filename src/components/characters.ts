@@ -1,103 +1,110 @@
 export type Character = {
-  id: string;
+  id: number;
   name: string;
-  alias: string;
-  universe: string;
+  username: string;
+  licenses: string;
   description: string;
   image: string; // relative path to asset
   city?: string;
   coords?: [number, number]; // [lat, lng]
 };
 
-export const characters: Character[] = [
+
+const rawCharacters = [
   {
-    id: 'batman',
+    name: 'Sebastián Mejía',
+    username: 'Sebastian7ML',
+    licenses: 'B2 / TMA',
+    description: 'Avionics technician with experience in Garmin suites',
+    image: '/src/assets/sebas.jpg',
+    city: 'Sabadell',
+    coords: [41.5167, 2.1000], // Sabadell Airport
+  },
+  {
     name: 'Bruce Wayne',
-    alias: 'Batman',
-    universe: 'DC',
+    username: 'Batman',
+    licenses: 'DC',
     description: 'A vigilante detective and protector of Gotham City.',
     image: '/src/assets/batman.jpg',
     city: 'Gotham City',
     coords: [40.7128, -74.0060], // NYC as Gotham
   },
   {
-    id: 'spiderman',
     name: 'Peter Parker',
-    alias: 'Spider-Man',
-    universe: 'Marvel',
+    username: 'Spider-Man',
+    licenses: 'Marvel',
     description: 'A young superhero with spider-like abilities.',
     image: '/src/assets/spiderman.jpg',
     city: 'New York City',
     coords: [40.7128, -74.0060],
   },
   {
-    id: 'venom',
     name: 'Eddie Brock',
-    alias: 'Venom',
-    universe: 'Marvel',
+    username: 'Venom',
+    licenses: 'Marvel',
     description: 'A journalist bonded with an alien symbiote.',
     image: '/src/assets/venom.jpg',
     city: 'New York City',
     coords: [40.7128, -74.0060],
   },
   {
-    id: 'wolverine',
     name: 'Logan',
-    alias: 'Wolverine',
-    universe: 'Marvel',
+    username: 'Wolverine',
+    licenses: 'Marvel',
     description: 'A mutant with healing powers and adamantium claws.',
     image: '/src/assets/wolverine.jpg',
     city: 'Alberta',
     coords: [53.9333, -116.5765],
   },
   {
-    id: 'ironman',
     name: 'Tony Stark',
-    alias: 'Iron Man',
-    universe: 'Marvel',
+    username: 'Iron Man',
+    licenses: 'Marvel',
     description: 'A genius billionaire inventor in a high-tech armored suit.',
     image: '/src/assets/ironman.png',
     city: 'Malibu',
     coords: [34.0259, -118.7798],
   },
   {
-    id: 'loki',
     name: 'Loki Laufeyson',
-    alias: 'Loki',
-    universe: 'Marvel',
+    username: 'Loki',
+    licenses: 'Marvel',
     description: 'The god of mischief, known for his cunning and trickery.',
     image: '/src/assets/loki.jpg',
     city: 'Asgard',
     coords: [59.3293, 18.0686], // Stockholm as placeholder
   },
   {
-    id: 'hulk',
     name: 'Bruce Banner',
-    alias: 'Hulk',
-    universe: 'Marvel',
+    username: 'Hulk',
+    licenses: 'Marvel',
     description: 'A scientist who transforms into a powerful green giant when angry.',
     image: '/src/assets/hulk.jpg',
     city: 'Dayton',
     coords: [39.7589, -84.1916],
   },
   {
-    id: 'joker',
     name: 'Unknown',
-    alias: 'Joker',
-    universe: 'DC',
+    username: 'Joker',
+    licenses: 'DC',
     description: 'The chaotic and unpredictable arch-nemesis of Batman.',
     image: '/src/assets/joker.jpg',
     city: 'Gotham City',
     coords: [40.73, -74.30],
   },
   {
-    id: 'aquaman',
     name: 'Arthur Curry',
-    alias: 'Aquaman',
-    universe: 'DC',
+    username: 'Aquaman',
+    licenses: 'DC',
     description: 'The king of Atlantis with the power to control the seas.',
     image: '/src/assets/aquaman.png',
     city: 'Atlantis',
     coords: [31.1313, -24.0376], // Atlantic Ocean
   },
 ];
+
+export const characters: Character[] = rawCharacters.map((char, idx) => ({
+  ...char,
+  id: idx + 1,
+  coords: char.coords as [number, number],
+}));
